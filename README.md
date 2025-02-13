@@ -12,3 +12,6 @@ GitHubActions_WeatherTracker/
 ├── README.md
 ├── package.json
 └── requirements.txt
+
+
+index.html  --->  This is the webpage that displays the temperature.
