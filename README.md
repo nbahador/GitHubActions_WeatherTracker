@@ -13,9 +13,10 @@ GitHubActions_WeatherTracker/
 └── package.json
 
 
-index.html  --->  This is the webpage that displays the temperature.
-This is a simple HTML file with a div to display the temperature and the last update time.
+index.html  --->  This file will display the weather data.
 
-script.js  ---> This will handle fetching the weather data from the OpenWeather API and displaying it.
+script.js  ---> This file will fetch the weather data from MetaWeather and update the webpage.
+
+
 
 
