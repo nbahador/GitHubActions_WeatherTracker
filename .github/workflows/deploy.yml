@@ -1,4 +1,4 @@
-name: Update Weather Page
+name: Deploy Weather Page to GitHub Pages
 
 on:
   schedule:
@@ -8,32 +8,28 @@ on:
       - main
 
 jobs:
-  update-weather:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-    # Step 1: Checkout the repository
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    # Step 2: Set up Node.js (you may need this for build steps)
-    - name: Set up Node.js
+    - name: Set up Node.js (even if not needed for your project)
       uses: actions/setup-node@v2
       with:
         node-version: '14'
 
-    # Step 3: Install dependencies
-    - name: Install dependencies
+    - name: Install dependencies (if you have any)
       run: npm install
+      working-directory: ./  # You can specify a subdirectory if needed
 
-    # Step 4: Build your weather page (you can replace this with your build command)
-    - name: Build the weather page
-      run: npm run build   # or replace with your build command
+    - name: Build project (this is a simple echo command here)
+      run: npm run build
 
-    # Step 5: Deploy to GitHub Pages
-    - name: Deploy updated weather page to GitHub Pages
+    - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}  # Uses the GitHub token automatically
-        publish_branch: gh-pages  # The branch to publish (could be 'gh-pages' or any other branch you use)
-        publish_dir: ./build     # Directory to publish (replace with the correct build directory)
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: gh-pages  # The branch where you want to publish the page
+        publish_dir: ./  # The directory containing your index.html file
