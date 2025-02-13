@@ -25,7 +25,9 @@ jobs:
       working-directory: ./  # You can specify a subdirectory if needed
 
     - name: Build project (this is a simple echo command here)
-      run: npm run build
+      run: |
+        echo "Building the project..."
+        npm run build
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
@@ -33,3 +35,6 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_branch: gh-pages  # The branch where you want to publish the page
         publish_dir: ./  # The directory containing your index.html file
+
+    - name: Log message (for proof)
+      run: echo "The deployment process is running successfully!"
