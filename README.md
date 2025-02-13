@@ -1,4 +1,4 @@
-## **GitHub Actions Weather Tracker**
+## **GitHub Actions Demo: Weather Tracker**
   - A simple weather tracker application
   - Fetches the current temperature from a weather API
   - Displays the current temperature to the user
