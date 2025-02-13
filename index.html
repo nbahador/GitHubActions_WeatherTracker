@@ -4,29 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Toronto Weather</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #87ceeb;
-            color: white;
-            margin-top: 50px;
-        }
-        .temperature {
-            font-size: 60px;
-            font-weight: bold;
-            margin: 20px;
-        }
-        .time {
-            font-size: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Current Temperature in Toronto</h1>
-    <div class="temperature" id="temperature">Loading...</div>
-    <div class="time" id="time">Last updated: loading...</div>
-
+    <div class="container">
+        <h1>Toronto Weather</h1>
+        <div id="temperature"></div>
+        <div id="time">Last updated: loading...</div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
