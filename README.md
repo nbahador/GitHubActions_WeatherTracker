@@ -1,6 +1,6 @@
 # GitHub Actions Weather Tracker
 
-A simple weather tracker that fetches the current temperature and displays it. The weather data is updated every 5 minutes using GitHub Actions and hosted on GitHub Pages.
+A simple weather tracker that fetches the current temperature and displays it. 
 
 ## Live Demo
 
