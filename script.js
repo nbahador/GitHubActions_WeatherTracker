@@ -1,15 +1,19 @@
-const apiKey = "YOUR_OPENWEATHER_API_KEY";  // You need to replace this with your API key
-const city = "Toronto";
-const units = "metric"; // For Celsius temperature
+const city = "toronto";
+const apiUrl = `https://www.metaweather.com/api/location/search/?query=${city}`;
 
 async function fetchWeather() {
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`);
+    const response = await fetch(apiUrl);
     const data = await response.json();
+    
+    if (data.length > 0) {
+        const woeid = data[0].woeid; // Get the WOEID (Where On Earth ID)
+        const weatherResponse = await fetch(`https://www.metaweather.com/api/location/${woeid}/`);
+        const weatherData = await weatherResponse.json();
+        
+        const temperature = weatherData.consolidated_weather[0].the_temp; // Today's temperature
+        const time = new Date().toLocaleTimeString(); // Get current time
 
-    if (data.main) {
-        const temperature = data.main.temp;
-        const time = new Date().toLocaleTimeString();
-
+        // Update the temperature and time on the webpage
         document.getElementById("temperature").textContent = `${temperature}°C`;
         document.getElementById("time").textContent = `Last updated: ${time}`;
     } else {
