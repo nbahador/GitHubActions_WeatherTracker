@@ -14,8 +14,9 @@ GitHubActions_WeatherTracker/
 
 
 ## How It Works
-1. The app fetches data from the **MetaWeather API**.
-2. It displays the current temperature in Celsius.
-3. The temperature is updated automatically every 5 minutes.
+1. **Data Fetching**: The app retrieves real-time weather data from the **MetaWeather API**.
+2. **Temperature Display**: It then displays the current temperature in **Celsius** on the webpage.
+3. **Automatic Updates**: Every **5 minutes**, the temperature data is automatically refreshed to ensure the displayed information is up-to-date.
+
 
 
