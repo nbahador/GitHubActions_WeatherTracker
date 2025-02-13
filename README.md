@@ -1,7 +1,8 @@
-# GitHub Actions Weather Tracker
-
-A simple weather tracker that fetches the current temperature and displays it. 
-The deployment is triggered automatically by a scheduled action.
+- **# GitHub Actions Weather Tracker**
+  - A simple weather tracker application
+  - Fetches the current temperature from a weather API
+  - Displays the current temperature to the user
+  - Deployment is triggered automatically by a scheduled GitHub Actions workflow
 
 ## Live Demo
 
