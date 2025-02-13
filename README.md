@@ -1,3 +1,12 @@
+# GitHub Actions Weather Tracker
+
+A simple weather tracker that fetches the current temperature and displays it. The weather data is updated every 5 minutes using GitHub Actions and hosted on GitHub Pages.
+
+## Live Demo
+
+Check out the live version of the weather tracker here:  
+[Weather Tracker Live](https://nbahador.github.io/GitHubActions_WeatherTracker/)
+
 ## Project Structure
 
 ```plaintext
@@ -5,18 +14,9 @@ GitHubActions_WeatherTracker/
 │
 ├── .github/
 │   └── workflows/
-│       └── fetch-weather.yml       # Automates the weather data update every 5 minutes
+│       └── deploy.yml              # Automates the deployment to GitHub Pages
 │
-├── index.html                      # Displays the weather data
-├── script.js                       # Fetches weather data from MetaWeather and updates the webpage
+├── index.html                      # Displays the weather data on the web page
+├── package.json                    # Project dependencies and configurations
 ├── README.md                       # Project documentation
-└── package.json                    # Project dependencies and configurations
-
-
-## How It Works
-1. **Data Fetching**: The app retrieves real-time weather data from the **MetaWeather API**.
-2. **Temperature Display**: It then displays the current temperature in **Celsius** on the webpage.
-3. **Automatic Updates**: Every **5 minutes**, the temperature data is automatically refreshed to ensure the displayed information is up-to-date.
-
-
-
+└── weather.js                       # Fetches weather data from Open-Meteo API and updates the webpage
