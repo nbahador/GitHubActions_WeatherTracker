@@ -12,29 +12,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Set up Node.js (even if not needed for your project)
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14'
+      - name: Test cron job trigger (logging time)
+        run: echo "Cron job triggered at $(date)"  # Log when the cron job runs
 
-    - name: Install dependencies (if you have any)
-      run: npm install
-      working-directory: ./  # You can specify a subdirectory if needed
+      - name: Set up Node.js (even if not needed for your project)
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
 
-    - name: Build project (this is a simple echo command here)
-      run: |
-        echo "Building the project..."
-        npm run build
+      - name: Install dependencies (if you have any)
+        run: npm install
+        working-directory: ./  # You can specify a subdirectory if needed
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_branch: gh-pages  # The branch where you want to publish the page
-        publish_dir: ./  # The directory containing your index.html file
+      - name: Build project
+        run: npm run build
 
-    - name: Log message (for proof)
-      run: echo "The deployment process is running successfully!"
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./  # The directory containing your index.html file
